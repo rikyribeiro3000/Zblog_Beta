@@ -23,6 +23,7 @@ This Application is Open Source, feel free to use it whatever way you want. I ma
  
  
 # Bugs that need to be fixed:
-* Comments are not displaying
+* Comment's data to be Dynamic instead of hard code 
+
 
 
