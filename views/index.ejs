@@ -1,0 +1,26 @@
+<% include ./partials/header %>
+<div class="container">
+      <div class="row">
+         <% blogs.forEach(function(blog){ %>
+            <!-- Blog Entries Column -->
+            <div class="col-md-6">
+              <h1 class="my-4"><a class="header" href="/blogs/<%=blog._id%>"><%=blog.title %></a></h1>
+              <!-- Blog Post -->
+              <div class="card mb-4">
+                <img class="card-img-top" src="<%= blog.image %>" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text">
+                      <%- blog.body.substring(0, 100) %>...
+                  </p>
+                      <a class="btn btn-dark" href="/blogs/<%=blog._id%>"> Read More &rarr;</a>
+                </div>
+                <div class="card-footer text-muted">
+                     <span> Posted on <%= blog.created.toDateString() %></span>
+                </div>
+              </div>
+            </div>  
+        <% }); %>
+    </div>
+</div>
+
+<% include ./partials/footer %>

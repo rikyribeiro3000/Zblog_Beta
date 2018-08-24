@@ -1,0 +1,45 @@
+<% include ./partials/header %>
+
+<div class="container">
+    <h1><%=blog.title%></h1>
+    <div>
+        <div class="thumbnail">
+             <img src="<%=blog.image%>">
+        <div>
+                <span><strong><%=blog.created.toDateString()%></strong></span> 
+        <div class="caption">
+                <p><%-blog.body%></p>
+        </div>
+        <a class= "btn btn-dark" href="/blogs/<%=blog._id%>/edit">Edit</a>
+        <form id="delete" action="/blogs/<%=blog._id%>?_method=DELETE" method="POST">
+            <button class="btn btn-danger">Delete</button>
+        </form>
+      </div>
+  </div>
+   <div class = "well">
+                <div class = "text-right">
+                    <a class = "btn btn-secondary" href="/blogs/<%= blog._id %>/comments/new">Add New Comment</a>
+                </div>
+                <hr>
+                <% blog.comments.forEach(function(comment){ %>
+                    <div class = "row">
+                        <div class = "col-lg-12">
+                           <strong> <%= comment.author %></strong>
+                            <span class = "pull-right">12 days ago</span>
+                            <p>
+                                <%= comment.text %>
+                            </p>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+
+       
+        
+
+</div>
+<% include ./partials/footer %>
