@@ -41,7 +41,8 @@ router.post("/blogs", isLoggedIn, function(req, res){
 
 //Show Route
 router.get("/blogs/:id", function(req, res){
-   Blog.findById(req.params.id, function(err, foundBlog){
+	//Populate comments so they can show up on the Comment Section
+   Blog.findById(req.params.id.populate("comments").exec(function(err, foundBlog){
        if (err) {
            res.redirect("/blogs");
        } else {
