@@ -15,7 +15,7 @@ This Application is Open Source, feel free to use it whatever way you want. I ma
  
 # What I am Planning to add or improve:
   * Global Chat system for all users
-  * User Proflie
+  * User Profile
   * Authentication using more PassportJs Strategies
   * More Security Features
   * Post Rating (like, Dislike system)
